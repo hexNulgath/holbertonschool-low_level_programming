@@ -8,7 +8,7 @@ int main(void)
 {
 	char n;
 
-	for (n = '0 '; n < 'g' ; n++)
+	for (n = '0' ; n < 'g' ; n++)
 	{
 		if (n <= '9' || n >= 'a')
 		putchar(n);
