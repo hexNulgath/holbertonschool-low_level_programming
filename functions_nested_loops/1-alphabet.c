@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * main - Entry point
- * Description: 'print alphabet'
+ * print_alphabet - prints alphabet
+ * 
  * Return: Always 0 (Success)
  */
 void print_alphabet(void)
@@ -13,5 +13,4 @@ void print_alphabet(void)
 		_putchar(i);
 		i++;
 	}
-	return (0);
 }
