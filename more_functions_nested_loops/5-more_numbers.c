@@ -9,7 +9,8 @@ void more_numbers(void)
 	int a = 0;
 	int i = 0;
 
-	do {
+	while (i != 10) 
+	{
 		while (a <= 14)
 		{
 			if (a > 9)
@@ -19,5 +20,5 @@ void more_numbers(void)
 		}
 		_putchar('\n');
 		i++;
-	} while (i != 10);
+	} 
 }
