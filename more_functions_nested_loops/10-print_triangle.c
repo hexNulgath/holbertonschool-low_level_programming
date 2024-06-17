@@ -1,14 +1,14 @@
 #include "main.h"
 /**
- * print_triangles - prints a triangle
- * @size: number of base
+ * print_triangle - prints a triangle
+ * @size: base of triangle
  * Return: void
  */
 
 void print_triangle(int size)
 {
 	int number = 0;
-	int space = size -1;
+	int space = size - 1;
 	int i = space;
 	int f = 0;
 	int r = size;
@@ -16,13 +16,13 @@ void print_triangle(int size)
 
 	while (number < size)
 	{
-		while (i > 0 )
+		while (i > 0)
 		{
 			_putchar(' ');
 			i--;
 		}
 			space--;
-			i = space;	
+			i = space;
 			f = size - r;
 			while (f >= t)
 		{
