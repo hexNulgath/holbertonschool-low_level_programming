@@ -13,9 +13,10 @@ void print_triangle(int size)
 	int f = 0;
 	int r = size;
 	int t = 0;
-	
-	if(size <= 0)
-	       _putchar('\n');	
+
+	if (size <= 0)
+		_putchar('\n');
+
 	while (number < size)
 	{
 		while (i > 0)
