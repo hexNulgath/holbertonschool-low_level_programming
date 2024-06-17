@@ -1,3 +1,5 @@
+int _putchar(char c);
+void _printf(int a);
 int _isupper(int c);
 int _isdigit(int c);
 int mul(int a, int b);
