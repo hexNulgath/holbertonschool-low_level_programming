@@ -7,9 +7,8 @@
 void more_numbers(void)
 {
 	int a = 0;
-	int i = 0;
 
-	while (i < 11)
+	for (i = 0; i < 11; i++)
 	{
 		while (a <= 14)
 		{
@@ -19,6 +18,5 @@ void more_numbers(void)
 			a++;
 		}
 		_putchar('\n');
-		i++;
 	}
 }
