@@ -2,7 +2,7 @@
 #include "stdio.h"
 /**
  * main - prints a word 99 times
- * Return: void
+ * Return: 0
  */
 
 int main(void)
@@ -12,14 +12,24 @@ int main(void)
 	while (fizz < 101)
 	{
 		if (fizz % 3 == 0 && fizz % 5 == 0)
-		{ 
+		{
 			printf("FizzBuzz ");
-		} else if (fizz % 3 == 0) {
+		}
+		else if (fizz % 3 == 0)
+		{
 			printf("Fizz ");
-		} else if (fizz % 5 == 0) {
+		}
+		else if (fizz % 5 == 0 && fizz == 100)
+		{
+			printf("Buzz");
+		}
+		else if (fizz % 5 == 0)
+		{
 			printf("Buzz ");
-		} else {
-			printf("%d ",fizz);
+		}
+		else
+		{
+			printf("%d ", fizz);
 		}
 		fizz++;
 	}
