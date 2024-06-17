@@ -21,4 +21,6 @@ void print_square(int size)
 		y++;
 		x = 0;
 	}
+	if (size < 1)
+		_putchar('\n');
 }
