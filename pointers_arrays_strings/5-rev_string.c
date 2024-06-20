@@ -15,7 +15,6 @@ void rev_string(char *s)
 	{
 		i++;
 	}
-	reverse[i];
 	while (i > 0)
 	{
 		i--;
