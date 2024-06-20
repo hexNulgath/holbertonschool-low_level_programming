@@ -23,6 +23,7 @@ int _atoi(char *s)
 		i++;
 	}
 
- 
-	return res * sign;
+	if (sign < 0)
+		res = -res;
+	return (res);
 }
