@@ -8,19 +8,19 @@
 void rev_string(char *s)
 {
 	int i = 0;
-	char *reverse;
         int r = 0;
+	char temp;
 
 	while (s[i] != '\0')
 	{
 		i++;
 	}
-	while (i > 0)
+
+	for (r = 0; r < i / 2; r++)
 	{
-		i--;
-		reverse[r] = s[i];
-		r--;
+		temp = s[r];
+		s[r] = s[i - r - 1];
+		s[i - r - 1] = temp;
 	}
-	s = reverse;
 	_putchar('\n');
 }
