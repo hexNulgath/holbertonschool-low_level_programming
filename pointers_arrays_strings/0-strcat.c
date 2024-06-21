@@ -8,7 +8,7 @@
 
 char *_strcat(char *dest, char *src)
 {
-	char *pDest = &dest;
+	char **pDest = &dest;
 	int i = 0;
 	int r = 0;
 
@@ -24,5 +24,5 @@ char *_strcat(char *dest, char *src)
 	}
 	else
 		i++;
-	return (pDest);
+	return (*pDest);
 }
