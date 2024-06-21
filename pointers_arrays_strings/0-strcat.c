@@ -6,7 +6,7 @@
  * Return: a pointer to string dest
  */
 
-char *_strcat(char *dest, char *src);
+char *_strcat(char *dest, char *src)
 {
 	char *pDest = &dest;
 	int i = 0;
