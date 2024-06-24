@@ -7,12 +7,12 @@
 
 char *leet(char *s)
 {
-	int i = 0;
+	int i;
 	char letters[5] = {'a', 'e', 'o', 't', 'l'}; 
 	char rep[5] = {'4', '3', '0', '7', '1'}; 
 	int r = 0;
 
-	while (s[i] != '\0')
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		while (r < 6)
 		{
@@ -23,8 +23,7 @@ char *leet(char *s)
 			r++;	
 		}
 		r = 0;
-		i++;
 	}
-	
+
 	return (s);
 }
