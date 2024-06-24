@@ -22,7 +22,7 @@ int _strcmp(char *s1, char *s2)
         }
 	if (z < i)
 		res = 13;
-	else if (i > z)
+	else if (z > i)
 		res = -13;
 	else
 		res = 0;
