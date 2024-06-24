@@ -16,10 +16,10 @@ int _strcmp(char *s1, char *s2)
 	{
 		i++;
 	}
-	 while (s2[z] != '\0')
-        {
-                z++;
-        }
+	while (s2[z] != '\0')
+	{
+		z++;
+	}
 	if (z > i)
 		res = 13;
 	else if (z < i)
