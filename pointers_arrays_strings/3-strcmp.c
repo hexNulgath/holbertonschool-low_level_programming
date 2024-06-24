@@ -21,9 +21,9 @@ int _strcmp(char *s1, char *s2)
                 z++;
         }
 	if (z < i)
-		res = 15;
+		res = 13;
 	else if (i > z)
-		res = -15;
+		res = -13;
 	else
 		res = 0;
 
