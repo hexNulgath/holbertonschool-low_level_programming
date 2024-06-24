@@ -25,7 +25,7 @@ int _strcmp(char *s1, char *s2)
 	else if (i > z)
 		res = -15;
 	else
-		res = 0
+		res = 0;
 
 
 	return (res);
