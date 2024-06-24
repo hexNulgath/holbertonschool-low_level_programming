@@ -9,7 +9,7 @@ char *leet(char *s)
 {
 	int i = 0;
 	char letters[5] = {'a', 'e', 'o', 't', 'l'}; 
-	int rep[5] = {4, 3, 0, 7, 1}; 
+	char rep[5] = {'4', '3', '0', '7', '1'}; 
 	int r = 0;
 
 	while (s[i] != '\0')
