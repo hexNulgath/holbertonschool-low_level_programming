@@ -8,17 +8,17 @@
 char *leet(char *s)
 {
 	int i;
-	char letters[5] = {'a', 'e', 'o', 't', 'l'}; 
-	char rep[5] = {'4', '3', '0', '7', '1'}; 
+	char input[5] = {'a', 'e', 'o', 't', 'l'}; 
+	char output[5] = {'4', '3', '0', '7', '1'}; 
 	int r = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		while (r < 6)
 		{
-			if (s[i] == letters[r] || s[i] == letters[r] - 32)
+			if (s[i] == input[r] || s[i] == input[r] - 32)
 			{
-				s[i] = rep[r];
+				s[i] = output[r];
 			}
 			r++;	
 		}
