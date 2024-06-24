@@ -19,7 +19,8 @@ char *leet(char *s)
 			if (s[i] == letters[r] || s[i] == letters[r] - 32)
 			{
 				s[i] = rep[r];
-			}	
+			}
+			r++;	
 		}
 		r = 0;
 		i++;
