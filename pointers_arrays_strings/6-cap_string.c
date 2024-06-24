@@ -23,7 +23,7 @@ char *cap_string(char *s)
 				s[i] = s[i] - 32;
 			}
 		}
-		else if (s[i] == 44 || s[i] == 9 || s[i] == '10')
+		else if (s[i] == 44 || s[i] == 9 || s[i] == 10)
 		{
 			i++;
 			if (s[i] < 123 && s[i] > 96)
