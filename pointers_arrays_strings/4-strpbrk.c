@@ -10,7 +10,7 @@ char *_strpbrk(char *s, char *accept)
 {
 	unsigned int i = 0;
 	unsigned int r = 0;
-	char * pS;
+	char *pS;
 
 	while (s[i] !=  '\0')
 	{
@@ -20,7 +20,7 @@ char *_strpbrk(char *s, char *accept)
 			{
 				pS = &s[i];
 				return (pS);
-			}				
+			}
 			r++;
 		}
 		r = 0;
