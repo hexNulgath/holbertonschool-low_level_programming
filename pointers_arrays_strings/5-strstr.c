@@ -12,6 +12,8 @@ char *_strstr(char *haystack, char *needle)
 	unsigned int r = 0;
 	char *pNeedle;
 
+	if (needle[0] == '\0')
+		return (haystack);
 	while (haystack[i] !=  '\0')
 	{
 		if (needle[r] == haystack[i])
