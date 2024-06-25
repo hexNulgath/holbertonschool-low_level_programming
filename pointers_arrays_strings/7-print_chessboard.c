@@ -10,16 +10,15 @@ void print_chessboard(char (*a)[8])
 	int i = 0;
 	int z = 0;
 
-	while (z < 9)
+	while (z < 8)
 	{
-		while (i < 9)
+		while (i < 8)
 		{
 			_putchar(a[z][i]);
 			i++;
 		}
 		i = 0;
 		z++;
-		if (z < 8)
-			_putchar('\n');
+		_putchar('\n');
 	}
 }
