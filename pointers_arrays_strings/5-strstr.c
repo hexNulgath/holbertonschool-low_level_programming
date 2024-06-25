@@ -14,9 +14,8 @@ char *_strstr(char *haystack, char *needle)
 
 	while (haystack[i] !=  '\0')
 	{
-		if (needle[0] == haystack[i])
+		if (needle[r] == haystack[i])
 		{
-			pNeedle = &haystack[i];
 			while (needle[r] != '\0')
 			{
 				if (needle[r] == haystack[i])
@@ -32,8 +31,8 @@ char *_strstr(char *haystack, char *needle)
 				else
 					break;
 			}
+			r = 0;
 		}
-		
 		i++;
 	}
 	return ("nil");
