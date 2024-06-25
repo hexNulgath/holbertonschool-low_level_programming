@@ -25,15 +25,16 @@ char *_strstr(char *haystack, char *needle)
 					i++;
 					if (needle[r] == '\0')
 					{
-						pNeedle = &haystack[i-1];
+						pNeedle = &haystack[i-r];
 						return (pNeedle);
+					}
 				}
 				else
 					break;
 			}
 		}
-		else
-			i++;
+		
+		i++;
 	}
 	return ("nil");
 }
