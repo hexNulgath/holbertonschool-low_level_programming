@@ -19,7 +19,7 @@ void print_chessboard(char (*a)[8])
 		}
 		i = 0;
 		z++;
-		if z < 8
+		if (z < 8)
 			_putchar('\n');
 	}
 }
