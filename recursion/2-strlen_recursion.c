@@ -4,7 +4,6 @@
  * @s: a string to print
  * Return: length of string
  */
-
 int _length(char *s, int n)
 {
     if (*s == '\0')
