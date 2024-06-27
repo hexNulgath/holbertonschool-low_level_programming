@@ -4,16 +4,17 @@
  * @s: a string to print
  * Return: length of string
  */
+
+int _length(char *s, int n)
+{
+    if (*s == '\0')
+        return n;
+    n++;
+    return _length(s + 1, n);
+}
+
 int _strlen_recursion(char *s)
 {
-	int f;
-	
-	if (*s == '\0')
-		f = *s;
-	else
-	{
-		s++;
-		_print_rev_recursion(s);
-	}
-	return (f - *s);
+    int n = 0;
+    return _length(s, n);
 }
