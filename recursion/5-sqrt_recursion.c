@@ -7,15 +7,15 @@
  */
 int _root(int n, int y)
 {
-	if (y == 0)
+	if (y == n && n != 1)
 		return (-1);
-	if (n / y == y && n % y == 0)
+	if (y * y == n)
 	{
 		return (y);
 	}
 	else
 	{
-		y--;
+		y++;
 		return (_root(n, y));
 	}
 }
@@ -27,7 +27,7 @@ int _root(int n, int y)
  */
 int _sqrt_recursion(int n)
 {
-	int y = n;
+	int y = 0;
 	int f;
 
 	if (n < 0)
