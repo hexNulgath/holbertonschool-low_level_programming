@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * main - Entry point
  * Description: Prints all arguments
@@ -8,8 +9,19 @@
  */
 int main(int argc, char *argv[])
 {
-	int result = (*argv[argc - 2] - '0') * (*argv[argc - 1] - '0');
+	int result;
+	int a = atoi(argv[argc - 2]);
+	int b = atoi(argv[argc - 1]);
 
-	printf("%d\n", result);
-	return (0);
+	if (argc < 3)
+	{
+		printf("Error");
+		return (1);
+	}
+	else
+	{
+		result = a * b;
+		printf("%i\n", result);
+		return (0);
+	}
 }
