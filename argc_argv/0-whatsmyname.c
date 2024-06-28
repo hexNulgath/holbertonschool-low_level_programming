@@ -2,6 +2,8 @@
 /**
  * main - Entry point
  * Description: 'prints its name'
+ * @argc: argument size
+ * @argv: argument array
  * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
