@@ -16,15 +16,20 @@ int main(int argc, char *argv[])
 	{
 		while (i < argc)
 		{
+			if (atoi(argv[i]) == 0 && *argv[i] != '0')
+			{
+				printf("Error\n");
+				return (1);
+			}
+			else
+			{
 			result += atoi(argv[i]);
 			i++;
+			}
 		}
 			printf("%d\n", result);
 			return (0);
 	}
-	else
-	{
-		printf("0");
-		return (1);
-	}
+	printf("0");
+	return (1);
 }
