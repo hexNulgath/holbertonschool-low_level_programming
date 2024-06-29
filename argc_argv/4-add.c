@@ -11,15 +11,15 @@ int main(int argc, char *argv[])
 {
 	int result = 0;
 	int i = 1;
-        char *endptr; 
+	char *endptr;
 	int value;
-	
+
 	if (argc > 2)
 	{
 		while (i < argc)
 		{
-	            value = strtol(argv[i], &endptr, 10);
-         	    if (*endptr != '\0' || value == 0)
+			value = strtol(argv[i], &endptr, 10);
+			if (*endptr != '\0' || value == 0)
 			{
 				printf("Error\n");
 				return (1);
