@@ -9,14 +9,14 @@
  */
 int main(int argc, char *argv[])
 {
-	int result;
+	int result = 0;
 	int i = 1;
 
 	if (argc > 2)
 	{
 		while (i < argc)
 		{
-			if (atoi(argv[i]) == '0')
+			if (atoi(argv[i]) == 0)
 			{
 				printf("Error\n");
 				return (1);
@@ -30,6 +30,6 @@ int main(int argc, char *argv[])
 			printf("%d\n", result);
 			return (0);
 	}
-	printf("0");
+	printf("0\n");
 	return (1);
 }
