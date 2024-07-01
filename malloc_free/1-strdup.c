@@ -18,12 +18,14 @@ char *_strdup(char *str)
 	if (p == NULL)
 		return (NULL);
 
-	while (i <= size)
+	while (str[i] != '\0')
 	{
 		p[i] = str[i];
 		i++;
 	}
-
-	return (p);
-
+	if (str[i] == '\0')
+	{
+		p[i] = str[i];
+		return (p);
+	}
 }
