@@ -11,8 +11,8 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *p;
-	char *str1[];
-	char *str2[];
+	char *str1[sizeof(s1)];
+	char *str2[sizeof(s2)];
 	unsigned int i = 0;
 	unsigned int z = 0;
 	unsigned int size;
