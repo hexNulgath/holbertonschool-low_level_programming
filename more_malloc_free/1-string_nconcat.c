@@ -42,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		p[i] = s1[i];
 		i++;
 	}
-	while (s2[z] != '\0')
+	while (s2[z] != '\0' && z < n)
 	{
 		p[i] = s2[z];
 		i++;
