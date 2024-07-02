@@ -53,7 +53,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		i++;
 		z++;
 	}
-	if (s2[z] == '\0')
-		p[i] = s2[z];
+	p[i] = '\0';
 	return (p);
 }
