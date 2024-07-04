@@ -18,7 +18,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	while (i < nmemb)
 	{
-		p[i] = 0x00;
+		(char*)p[i] = 0x00;
 		i++;
 	}
 	return (p);
