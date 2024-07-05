@@ -1,11 +1,12 @@
 #include "dog.h"
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 /**
- * _strlen - total of characters in string
- * @s: a string pointer
- * Return: length
+ * _strncpy - copy a string
+ * @src: a string to append
+ * @dest: string of destinaton
+ * @n: an int defining maximum number of src to copy
+ * Return: a pointer to string dest
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -23,6 +24,11 @@ char *_strncpy(char *dest, char *src, int n)
 
 	return (*pDest);
 }
+/**
+ * _strlen - total of characters in string
+ * @s: a string pointer
+ * Return: length
+ */
 int _strlen(char *s)
 {
 	int length = 0;
@@ -62,7 +68,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 	_strncpy(dog->name, name, _strlen(name) + 1);
-    _strncpy(dog->owner, owner, _strlen(owner) + 1);
+	_strncpy(dog->owner, owner, _strlen(owner) + 1);
 
 	return (dog);
 }
