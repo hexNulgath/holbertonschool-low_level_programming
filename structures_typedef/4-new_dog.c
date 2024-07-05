@@ -1,5 +1,6 @@
 #include "dog.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  * new_dog - creates a new dog
  * @name: name of the dog
@@ -9,6 +10,13 @@
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	new_dog->name = name;
-	new_dog->age = age;
+	dog_t *dog;
+
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+		return(NULL);
+	dog->name = name;
+	dog->age = age;
+	dog->owner = owner;
+	return (dog);
 }
