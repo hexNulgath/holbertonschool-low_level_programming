@@ -1,24 +1,26 @@
-#include "function_pointers.h"
+#include "3-calc.h"
 /**
- * int_index - searches for an integer
- * @array: the elements to use
- * @size: size of the array
- * @cmp: function to be used to compare values
- * Return: return index of first match or -1
  */
-int int_index(int *array, int size, int (*cmp)(int))
+int op_add(int a, int b)
 {
-	int (*compare)(int) = cmp;
-	int i;
-	int result;
-
-	if (size <= 0 || array == NULL || compare == NULL)
-		return (-1);
-	for (i = 0; i < size; i++)
-	{
-		result = compare(array[i]);
-		if (result != 0)
-			return (i);
-	}
-	return (-1);
+}
+/**
+ */
+int op_sub(int a, int b)
+{
+}
+/**
+ */
+int op_mul(int a, int b)
+{
+}
+/**
+ */
+int op_div(int a, int b)
+{
+}
+/**
+ */
+int op_mod(int a, int b)
+{
 }
