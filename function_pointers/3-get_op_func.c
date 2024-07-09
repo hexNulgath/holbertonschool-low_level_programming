@@ -4,7 +4,7 @@
  *@s: operator to be used
  * Return: return index of first match or -1
  */
-int (*get_op_func(char *s))(int, int)
+int (*get_op_func(char *s))(int a, int b)
 {
 	op_t ops[] = {
 		{"+", op_add},
@@ -15,9 +15,12 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 	int i = 0;
-
-	while (ops[i, 0] != s)
-		i++;
-
-	return (ops[i, 1]);
+	
+	while (ops[i].op != "NULL")
+        {
+          if (s == ops[i].op)
+            return (ops[i].f(a, b));
+          i++;
+        }
+        return ("NULL");
 }
