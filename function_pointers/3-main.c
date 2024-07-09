@@ -1,24 +1,19 @@
 #include "function_pointers.h"
 /**
- * int_index - searches for an integer
- * @array: the elements to use
- * @size: size of the array
- * @cmp: function to be used to compare values
- * Return: return index of first match or -1
+ * main - does basic operations
+ * @argc: argument size
+ * @argv: argument array
+ * Return: Always return 0 on success
  */
-int int_index(int *array, int size, int (*cmp)(int))
+int main(int argc, char *argv[])
 {
-	int (*compare)(int) = cmp;
-	int i;
-	int result;
+	int number1 = int atoi(argv[argc - 3]);
+	int number2 = int atoi(argv[argc - 1]);
 
-	if (size <= 0 || array == NULL || compare == NULL)
-		return (-1);
-	for (i = 0; i < size; i++)
+	if (argc < 4 || argv[argc - 2] != '+' && argv[argc - 2] != '-' && argv[argc - 2] != '/' && argv[argc - 2] != '*')
 	{
-		result = compare(array[i]);
-		if (result != 0)
-			return (i);
+		printf(Error\n);
+		exit(98);
 	}
-	return (-1);
+
 }
