@@ -1,8 +1,8 @@
 #include "variadic_functions.h"
 /**
- * um_them_all- sum all int parameters
- * @n: a serie of int
- * return: the sum of the params
+ * sum_them_all - sum every param
+ * @n: size of array
+ * Return: result of sum
  */
 int sum_them_all(const unsigned int n, ...)
 {
