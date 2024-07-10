@@ -8,6 +8,10 @@ void print_all(const char * const format, ...)
 	char formaters[4] = {'\0'};
 	int i = 0;
 	int j = 0;
+	int ivalue;
+	char cvalue;
+	char *svalue;
+	float fvalue;
 	va_list args;
 
 	va_start(args, format);
@@ -39,19 +43,23 @@ void print_all(const char * const format, ...)
 	{
 		switch (formaters[i]){
 			case 'i':
-				printf("%i", va_arg(args, int));
+				ivalue = va_arg(args, int);
+				printf("%i", ivalue);
 				j++;
 				break;
 			case 'c':
-				printf("%c", va_arg(args, char));
+				cvalue = va_arg(args, char);
+				printf("%c", cvalue);
 				j++;
 				break;
 			case 'f':
-				printf("%f", va_arg(args, float));
+				fvalue = va_arg(args, float);
+				printf("%f", fvalue);
 				j++;
 				break;
 			case 's':
-				printf("%s", va_arg(args, char*));
+				svalue = va_arg(args, *char);
+				printf("%s", svalue);
 				j++;
 				break;
 		}
