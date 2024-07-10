@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
 				j++;
 				break;
 			case 's':
-				svalue = va_arg(args, *char);
+				svalue = va_arg(args, char*);
 				printf("%s", svalue);
 				j++;
 				break;
