@@ -5,13 +5,9 @@
  */
 void print_all(const char * const format, ...)
 {
-	char formaters[4] = {'\0'};
+	char formaters[5] = {'\0'};
 	int i = 0;
 	int j = 0;
-	int ivalue;
-	char cvalue;
-	char *svalue;
-	float fvalue;
 	va_list args;
 
 	va_start(args, format);
@@ -19,51 +15,35 @@ void print_all(const char * const format, ...)
 	{
 		switch (format[i]) {
 			case 'i':
-				formaters[j] = 'i';
-				j++;
-				break;
-			case 'c':
-				formaters[j] = 'c';
-				j++;
-				break;
+		 	case 'c':
 			case 'f':
-				formaters[j] = 'f';
+			case 's':
+				formaters[j] = format[i];
 				j++;
 				break;
-			case 's':
-				formaters[j] = 's';
-				j++;
-				break;	
 		}
 		i++;
 	}
 	i = 0;
-	j = 0;
 	while (formaters[i] != '\0')
 	{
 		switch (formaters[i]){
 			case 'i':
-				ivalue = va_arg(args, int);
-				printf("%i", ivalue);
-				j++;
+				printf("%d", va_arg(args, int));
 				break;
 			case 'c':
-				cvalue = va_arg(args, char);
-				printf("%c", cvalue);
-				j++;
+				printf("%c", (char) va_arg(args, int));
 				break;
 			case 'f':
-				fvalue = va_arg(args, float);
-				printf("%f", fvalue);
-				j++;
+				printf("%f", (double) va_arg(args, double));
 				break;
 			case 's':
-				svalue = va_arg(args, char*);
-				printf("%s", svalue);
-				j++;
+				printf("%s", va_arg(args, char*));
 				break;
 		}
 		i++;
+		if (formaters[i] != '\0')
+			printf(", ");
 	}
 	printf("\n");
 	va_end(args);
