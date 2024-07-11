@@ -9,7 +9,7 @@ void print_all(const char * const format, ...)
 	int i = 0;
 	int j = 0;
 	char *svalue;
-	va_list args;i
+	va_list args;
 
 	if (format == NULL)
 	{
