@@ -8,6 +8,7 @@ void print_all(const char * const format, ...)
 	char formaters[5] = {'\0'};
 	int i = 0;
 	int j = 0;
+	char *svalue;
 	va_list args;
 
 	va_start(args, format);
@@ -38,7 +39,13 @@ void print_all(const char * const format, ...)
 				printf("%f", (double) va_arg(args, double));
 				break;
 			case 's':
-				printf("%s", va_arg(args, char*));
+				svalue = va_arg(args, char*);
+				if (svalue == NULL)
+				{		
+					printf("(nil)");
+					break;
+				}
+				printf("%s", svalue);
 				break;
 		}
 		i++;
