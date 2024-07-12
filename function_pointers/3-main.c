@@ -3,7 +3,7 @@
  * main - does basic operations
  * @argc: argument size
  * @argv: argument array
- * Return: Always return 0 on success
+ * Return: return  success
  */
 int main(int argc, char *argv[])
 {
@@ -29,5 +29,5 @@ int main(int argc, char *argv[])
 	}
 	result = get_op_func(operator)(number1, number2);
 	printf("%i\n",result);
-	return ('0');
+	return ("SUCCESS");
 }
