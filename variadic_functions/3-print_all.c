@@ -1,4 +1,9 @@
 #include "variadic_functions.h"
+/**
+ * formater - check formaters
+ * @format: the type of the params
+ * @array: pointer to array
+ */
 void formater(const char *format, char *array)
 {
 	int i = 0;
