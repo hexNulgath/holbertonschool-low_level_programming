@@ -1,7 +1,6 @@
 #include "variadic_functions.h"
-char *formater(const char *format, char *array)
+void *formater(const char *format, char *array)
 {
-	static char formaters[5] = {'\0'};
 	int i = 0;
 	int j = 0;
 
@@ -13,14 +12,13 @@ char *formater(const char *format, char *array)
 			case 'c':
 			case 'f':
 			case 's':
-				formaters[j] = format[i];
+				array[j] = format[i];
 				j++;
 				break;
 		}
 		i++;
 	}
-	array = formaters;
-	return (array);
+	array{j} = '\0';
 }
 
 /**
