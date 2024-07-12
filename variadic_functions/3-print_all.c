@@ -8,7 +8,7 @@ void formater(const char *format, char *array)
 	{
 		switch (format[i])
 		{
-			case NULL:
+			case '\0':
 				return;
 			case 'i':
 			case 'c':
