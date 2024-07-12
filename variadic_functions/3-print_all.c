@@ -4,12 +4,12 @@ void formater(const char *format, char *array)
 	int i = 0;
 	int j = 0;
 
-	if (format == NULL)
-		return;
 	while (format[i] != '\0' && j < 4)
 	{
 		switch (format[i])
 		{
+			case NULL:
+				return;
 			case 'i':
 			case 'c':
 			case 'f':
