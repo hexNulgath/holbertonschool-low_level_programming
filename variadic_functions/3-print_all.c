@@ -34,7 +34,7 @@ void print_all(const char * const format, ...)
 	va_list args;
 
 	va_start(args, format);
-	formaters = formater(format, formaters);
+	formater(format, formaters);
 	while (formaters[i] != '\0')
 	{
 		switch (formaters[i])
