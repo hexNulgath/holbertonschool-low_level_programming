@@ -18,7 +18,7 @@ void *formater(const char *format, char *array)
 		}
 		i++;
 	}
-	array{j} = '\0';
+	array[j] = '\0';
 }
 
 /**
