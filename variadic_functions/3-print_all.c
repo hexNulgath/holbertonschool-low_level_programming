@@ -4,7 +4,7 @@ void formater(const char *format, char *array)
 	int i = 0;
 	int j = 0;
 
-	while (format[i] != '\0' && j < 4 && format[i] != NULL)
+	while (format[i] != '\0' && j < 4 && format != NULL)
 	{
 		switch (format[i])
 		{
