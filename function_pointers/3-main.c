@@ -8,7 +8,7 @@
 int main(int argc, char *argv[])
 {
 	int number1 = atoi(argv[argc - 3]);
-	char *operator = argv[argc - 2][0];
+	char *operator = argv[argc - 2];
 	int number2 = atoi(argv[argc - 1]);
 	int result;
 
