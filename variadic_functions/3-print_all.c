@@ -4,7 +4,7 @@ void formater(const char *format, char *array)
 	int i = 0;
 	int j = 0;
 
-	while (format[i] != '\0' && j < 4 && format != NULL)
+	while (format[i] != '\0' && j < 4)
 	{
 		switch (format[i])
 		{
@@ -32,6 +32,8 @@ void print_all(const char * const format, ...)
 	char *str;
 	va_list args;
 
+	if (format == NULL)
+		return;
 	va_start(args, format);
 	formater(format, formaters);
 	while (formaters[i] != '\0' && format != NULL)
@@ -42,10 +44,10 @@ void print_all(const char * const format, ...)
 				printf("%d", va_arg(args, int));
 				break;
 			case 'c':
-				printf("%c", (char) va_arg(args, int));
+				printf("%c, ", (char) va_arg(args, int));
 				break;
 			case 'f':
-				printf("%.6f", va_arg(args, double));
+				printf("%.6f, ", va_arg(args, double));
 				break;
 			case 's':
 				str = va_arg(args, char*);
@@ -54,14 +56,10 @@ void print_all(const char * const format, ...)
 					printf("(nil)");
 					break;
 				}
-				printf("%s", str);
+				printf("%s, ", str);
 				break;
 		}
 		i++;
-		if (formaters[i] != '\0') 
-		{
-            		printf(", ");
-		}
 	}
 	printf("\n");
 	va_end(args);
