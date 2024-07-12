@@ -1,5 +1,5 @@
 #include "variadic_functions.h"
-void *formater(const char *format, char *array)
+void formater(const char *format, char *array)
 {
 	int i = 0;
 	int j = 0;
