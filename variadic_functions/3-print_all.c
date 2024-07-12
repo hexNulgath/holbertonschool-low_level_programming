@@ -45,7 +45,7 @@ void print_all(const char * const format, ...)
 				printf("%c", (char) va_arg(args, int));
 				break;
 			case 'f':
-				printf("%.5f", va_arg(args, double));
+				printf("%.6f", va_arg(args, double));
 				break;
 			case 's':
 				str = va_arg(args, char*);
