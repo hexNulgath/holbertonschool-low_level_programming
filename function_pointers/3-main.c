@@ -29,5 +29,5 @@ int main(int argc, char *argv[])
 	}
 	result = get_op_func(operator)(number1, number2);
 	printf("%i\n",result);
-	return ("SUCCESS");
+	return (0);
 }
