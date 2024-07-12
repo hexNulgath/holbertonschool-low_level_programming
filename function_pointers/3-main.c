@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (*operator != '+' && *operator != '-' && *operator != '/' && *operator != '*' && *operator != '%')
+	if ((*operator != '+' && *operator != '-' && *operator != '/' && *operator != '*' && *operator != '%') || sizeof(*operator) > sizeof(char))
         {
                 printf("Error\n");
                 exit(99);
