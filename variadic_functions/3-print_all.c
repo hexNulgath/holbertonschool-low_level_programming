@@ -29,6 +29,7 @@ void print_all(const char * const format, ...)
 {
 	char formaters[5] = {'\0'};
 	int i = 0;
+	char *str;
 	va_list args;
 
 	va_start(args, format);
@@ -47,12 +48,13 @@ void print_all(const char * const format, ...)
 				printf("%.5f", va_arg(args, double));
 				break;
 			case 's':
-				if (va_arg(args, char*) == NULL)
+				str = va_arg(args, char*);
+				if (str == NULL)
 				{
 					printf("(nil)");
 					break;
 				}
-				printf("%s", va_arg(args, char*));
+				printf("%s", str);
 				break;
 		}
 		i++;
