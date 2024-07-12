@@ -17,12 +17,12 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if ((*operator != '+' && *operator != '-' && *operator != '/' && *operator != '*' && *operator != '%') || sizeof(*operator) > sizeof(char))
+	if (get_op_func(operator) == NULL)
         {
                 printf("Error\n");
                 exit(99);
         }
-	if ((*operator == '%' || *operator != '/') && number2 == 0)
+	if ((*operator == '%' || *operator == '/') && number2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
