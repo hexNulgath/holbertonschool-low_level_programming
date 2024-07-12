@@ -1,23 +1,11 @@
 #include "variadic_functions.h"
-/**
- * print_all - print any number of params
- * @format: the type of the params
- */
-void print_all(const char * const format, ...)
+char *formater(const char *format, *array)
 {
-	char formaters[5] = {'\0'};
+	static char formaters[5] = {'\0'};
 	int i = 0;
 	int j = 0;
-	char *svalue;
-	va_list args;
 
-	if (format == NULL)
-	{
-		printf("(nil)\n");
-		return;
-	}
-	va_start(args, format);
-	while (format[i] != '\0')
+	while (format[i] != '\0' && j < 4)
 	{
 		switch (format[i])
 		{
@@ -31,7 +19,22 @@ void print_all(const char * const format, ...)
 		}
 		i++;
 	}
-	i = 0;
+	array = formaters;
+	return (array);
+}
+
+/**
+ * print_all - print any number of params
+ * @format: the type of the params
+ */
+void print_all(const char * const format, ...)
+{
+	char formaters[5] = {'\0'};
+	int i = 0;
+	va_list args;
+
+	va_start(args, format);
+	formater(format, formaters);
 	while (formaters[i] != '\0')
 	{
 		switch (formaters[i])
@@ -46,18 +49,19 @@ void print_all(const char * const format, ...)
 				printf("%f", (double) va_arg(args, double));
 				break;
 			case 's':
-				svalue = va_arg(args, char*);
-				if (svalue == NULL)
+				if (va_arg(args, char*) == NULL)
 				{
 					printf("(nil)");
 					break;
 				}
-				printf("%s", svalue);
+				printf("%s", va_arg(args, char*));
 				break;
 		}
 		i++;
-		if (formaters[i] != '\0')
-			printf(", ");
+		if (formaters[i] != '\0') 
+		{
+            		printf(", ");
+		}
 	}
 	printf("\n");
 	va_end(args);
