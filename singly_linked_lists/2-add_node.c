@@ -5,7 +5,7 @@
  * Return: length
  */
 
-int _strlen(char *s)
+int _strlen(const char *s)
 {
 	int length = 0;
 	int i = 0;
