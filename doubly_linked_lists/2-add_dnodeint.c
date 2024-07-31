@@ -1,7 +1,8 @@
 #include "lists.h"
 /**
  * add_dnodeint -  returns elements of a list
- * @h: the head of a linked list
+ * @head: the head of a linked list
+ * @n: data for the new node
  * Return: the adress of new nodes
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
@@ -10,7 +11,6 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 
 	if (new == NULL)
 		return (NULL);
-	
 	new->n = n;
 	new->next = *head;
 	new->prev = NULL;
