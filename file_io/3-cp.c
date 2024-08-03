@@ -42,13 +42,13 @@ void cp(const char *file_from, const char *file_to)
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	close(fd);
-	close(fd1);
+	if(close(fd) == -1 || close(fd1) == -1)
+		dprintf(2, "Error: Can't close fd");
+                exit(100);
 }
 
 int main(int ac, char **av)
 {
-	ssize_t n;
 
 	if (ac != 3)
 	{
