@@ -1,5 +1,38 @@
 #include "main.h"
 /**
+ * _open - opens files for copy
+ * @file_from: path to file to take content from
+ * @file_to: path to file to paste content
+ * Return: an array of int
+ */
+int *_open(const char *file_from, const char *file_to)
+{
+	static int fd[2];
+
+	fd[0] = open(file_from, O_RDONLY);
+	if (fd[0] == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", file_from);
+		exit(98);
+	}
+	fd[1] = open(file_to, O_WRONLY | O_CREAT | O_EXCL, 0664);
+	if (fd[1] == -1)
+	{
+		if (errno == EEXIST)
+		{
+			fd[1] = open(file_to, O_WRONLY | O_TRUNC);
+		}
+		if (fd[1] == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", file_to);
+			close(fd[0]);
+			exit(99);
+		}
+	}
+
+	return (fd);
+}
+/**
  * cp - copy a file content to other
  * @file_from: path to file to take content from
  * @file_to: path to file to paste content
@@ -7,64 +40,49 @@
  */
 void cp(const char *file_from, const char *file_to)
 {
-    int fd, fd1;
-    ssize_t r_res;
-    char buffer[1024];
+	int *fd;
+	ssize_t r_res;
+	char buffer[1024];
 
-    fd = open(file_from, O_RDONLY);
-    if (fd == -1)
-    {
-        dprintf(2, "Error: Can't read from file %s\n", file_from);
-        exit(98);
-    }
+	fd = _open(file_from, file_to);
 
-    fd1 = open(file_to, O_WRONLY | O_CREAT | O_EXCL);
-    if (fd1 == -1)
-    {
-        if (errno == EEXIST)
-        {
-            fd1 = open(file_to, O_WRONLY | O_TRUNC);
-        }
-        if (fd1 == -1)
-        {
-            dprintf(2, "Error: Can't write to %s\n", file_to);
-            close(fd);
-            exit(99);
-        }
-    }
+	while ((r_res = read(fd[0], buffer, sizeof(buffer))) > 0)
+	{
+		if (write(fd[1], buffer, r_res) != r_res)
+		{
+			dprintf(2, "Error: Can't write to %s\n", file_to);
+			close(fd[0]);
+			close(fd[1]);
+			exit(99);
+		}
+	}
+	if (r_res == -1)
+	{
+		dprintf(2, "Error: Can't read from file %s\n", file_from);
+		close(fd[0]);
+		close(fd[1]);
+		exit(98);
+	}
 
-    while ((r_res = read(fd, buffer, sizeof(buffer))) > 0)
-    {
-        if (write(fd1, buffer, r_res) != r_res)
-        {
-            dprintf(2, "Error: Can't write to %s\n", file_to);
-            close(fd);
-            close(fd1);
-            exit(99);
-        }
-    }
+	if (close(fd[0]) == -1)
+	{
+		dprintf(2, "Error: Can't close file descriptor %d\n", fd[0]);
+		close(fd[1]);
+		exit(100);
+	}
 
-    if (r_res == -1)
-    {
-        dprintf(2, "Error: Can't read from file %s\n", file_from);
-        close(fd);
-        close(fd1);
-        exit(98);
-    }
-
-    if (close(fd) == -1)
-    {
-        dprintf(2, "Error: Can't close file descriptor %d\n", fd);
-        close(fd1);
-        exit(100);
-    }
-
-    if (close(fd1) == -1)
-    {
-        dprintf(2, "Error: Can't close file descriptor %d\n", fd1);
-        exit(100);
-    }
+	if (close(fd[1]) == -1)
+	{
+		dprintf(2, "Error: Can't close file descriptor %d\n", fd[1]);
+		exit(100);
+	}
 }
+/**
+ * main - check the code
+ * @ac: argument count
+ * @av: argument value
+ * Return: Always 0.
+ */
 int main(int ac, char **av)
 {
 
