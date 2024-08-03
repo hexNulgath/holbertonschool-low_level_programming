@@ -34,17 +34,27 @@ void cp(const char *file_from, const char *file_to)
 		if (write(fd1, buffer, r_res) != r_res)
 		{
 			dprintf(2, "Error: Can't write to %s\n", file_to);
+			close(fd);
+			close(fd1);
 			exit(99);
 		}
 	}
 	if (r_res == -1)
 	{
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
+		close(fd);
+		close(fd1);
 		exit(98);
 	}
-	if(close(fd) == -1 || close(fd1) == -1)
+	if (close(fd) == -1)
 	{
-		dprintf(2, "Error: Can't close fd");
+		dprintf(2, "Error: Can't close file descriptor %d\n", fd);
+		close(fd1);
+		exit(100);
+	}
+	if (close(fd1) == -1)
+	{
+		dprintf(2, "Error: Can't close file descriptor %d\n", fd1);
 		exit(100);
 	}
 }
