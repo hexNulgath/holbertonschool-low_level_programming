@@ -13,7 +13,7 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 		return;
 	}
-	i = 1UL << 32;
+	i = 1UL << 64;
 	while ((n & i) == 0 && i > 1)
 		i = i >> 1;
 	for (; i > 0; i = i >> 1)
