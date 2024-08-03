@@ -18,7 +18,7 @@ void cp(const char *file_from, const char *file_to)
         exit(98);
     }
 
-    fd1 = open(file_to, O_WRONLY | O_CREAT | O_EXCL, 0664);
+    fd1 = open(file_to, O_WRONLY | O_CREAT | O_EXCL);
     if (fd1 == -1)
     {
         if (errno == EEXIST)
