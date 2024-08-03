@@ -1,3 +1,4 @@
+#include "main.h"
 /**
  * binary_to_uint - turns binary to int
  * @b: a binary number
