@@ -43,8 +43,10 @@ void cp(const char *file_from, const char *file_to)
 		exit(98);
 	}
 	if(close(fd) == -1 || close(fd1) == -1)
+	{
 		dprintf(2, "Error: Can't close fd");
-                exit(100);
+		exit(100);
+	}
 }
 
 int main(int ac, char **av)
