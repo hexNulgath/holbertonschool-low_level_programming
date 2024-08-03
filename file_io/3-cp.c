@@ -67,10 +67,10 @@ void cp(const char *file_from, const char *file_to)
 	if (close(fd[0]) == -1)
 	{
 		dprintf(2, "Error: Can't close file descriptor %d\n", fd[0]);
-		close(fd[1]);
+		if (close(fd[1]) == -1)
+			dprintf(2, "Error: Can't close file descriptor %d\n", fd[1]);
 		exit(100);
 	}
-
 	if (close(fd[1]) == -1)
 	{
 		dprintf(2, "Error: Can't close file descriptor %d\n", fd[1]);
