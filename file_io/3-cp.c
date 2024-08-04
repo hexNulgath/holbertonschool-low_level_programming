@@ -15,7 +15,7 @@ int *_open(const char *file_from, const char *file_to)
 		dprintf(2, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	fd[1] = open(file_to, O_WRONLY | O_CREAT | O_EXCL, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	fd[1] = open(file_to, O_WRONLY | O_CREAT | O_EXCL, 0664);
 	if (fd[1] == -1)
 	{
 		if (errno == EEXIST)
